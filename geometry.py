@@ -4,31 +4,31 @@ class RegularPolygon():
     """ An equilateral and equiangular polygon """
     def __init__(self, numberOfSides=3, lengthOfSide=1.0, xCoord=0.0, yCoord=0.0):
         """ Initialize all instance variables as private with default values """
-        self._n = numberOfSides
-        self._side = lengthOfSide
-        self._x =  xCoord
-        self._y = yCoord
+        self.__n = numberOfSides
+        self.__side = lengthOfSide
+        self.__x =  xCoord
+        self.__y = yCoord
 
     def __str__(self):
         """  When printing object, print its attributes instead """
-        return f"Number of Sides: {self._n}, Length of each side: {self._side}, Center x coordinate: {self._x}, Center y coordinate: {self._y}"
+        return f"Number of Sides: {self.__n}, Length of each side: {self.__side}, Center x coordinate: {self.__x}, Center y coordinate: {self.__y}"
 
     # Accessor methods (getters)
     def getN(self):
         """ Get the number of sides """
-        return self._n
+        return self.__n
 
     def getSide(self):
         """ Get the length of the sides """
-        return self._side
+        return self.__side
 
     def getX(self):
         """ Get the x coordinate of the center """
-        return self._x
+        return self.__x
 
     def getY(self):
         """ Get the y coordinate of the center """
-        return self._y
+        return self.__y
 
         
     # Mutator methods (setters with input checking)
@@ -36,7 +36,7 @@ class RegularPolygon():
         """ Set a new number of sides """
         # If the given number of sides is an int greater than 2, then set it as the number of sides of the polygon
         if isinstance(numberOfSides, int) and numberOfSides > 2:
-            self._n = numberOfSides
+            self.__n = numberOfSides
         # Raise an error if the given number of sides is invalid
         else:
             raise ValueError("Number of sides wasn't changed: Number of sides must be an integer greater than 2")
@@ -49,7 +49,7 @@ class RegularPolygon():
 
         # If the given length of side is positive float, then set it as the length of each side of the polygon
         if isinstance(lengthOfSide, float) and lengthOfSide > 0:
-            self._side = lengthOfSide
+            self.__side = lengthOfSide
 
         # Raise an error if the given length of side is invalid
         else:
@@ -63,7 +63,7 @@ class RegularPolygon():
         
         # If the given x coordinate is valid, then set it as the x coordinate of the polygon
         if isinstance(xCoord, float):
-            self._x = xCoord
+            self.__x = xCoord
 
         # Raise an error if the given x coordinate is invalid
         else:
@@ -77,7 +77,7 @@ class RegularPolygon():
         
         # If the given y coordinate is valid, then set it as the y coordinate of the polygon
         if isinstance(yCoord, float):
-            self._y = yCoord
+            self.__y = yCoord
 
         # Raise an error if the given y coordinate is invalid
         else:
@@ -86,14 +86,12 @@ class RegularPolygon():
 
     def getPerimeter(self):
         """ Returns the permineter of the polygon (by multiplying number of sides and length of each sides) """
-        return self._n * self._side
+        return self.__n * self.__side
 
     def getArea(self):
         """ Returns the area of the polygon (using a complex formula given in the pdf) """
-        area = ( (self._n * self._side**2) / (4 * tan(pi / self._n) ) )
+        area = ( (self.__n * self.__side**2) / (4 * tan(pi / self.__n) ) )
         return area
-
-
 
 
 
@@ -117,10 +115,5 @@ def main():
     print(f"Perimeter of polygon3 is {polygon3.getPerimeter():,.2f} units")
     print(f"Area of polygon3 is {polygon3.getArea():,.2f} square units")
 
-
 if __name__ == "__main__":
     main()
-
-
-
-
