@@ -1,52 +1,58 @@
 class RegularPolygon():
     """ TODO """
-    def __init__(self, number_of_sides=3, length_of_side=1.0, x_coord=0.0, y_coord=0.0):
-        self._n = number_of_sides
-        self._side = length_of_side
-        self._x = x_coord
-        self._y = y_coord
+    def __init__(self, numberOfSides=3, lengthOfSide=1.0, xCoord=0.0, yCoord=0.0):
+        self._n = numberOfSides
+        self._side = lengthOfSide
+        self._x =  xCoord
+        self._y = yCoord
 
     def __str__(self):
-        return f"Number of Sides: {type(self._n)}, Length of a side: {self._side}, Center x coordinate: {self._x}, Center y coordinate: {self._y}"
+        return f"Number of Sides: {self._n}, Length of a side: {self._side}, Center x coordinate: {self._x}, Center y coordinate: {self._y}"
 
 
-    def get_n(self):
+    def getN(self):
         return self._n
 
-    def set_n(self, number_of_sides):
+    def setN(self,numberOfSides):
         """ TODO """
-        if isinstance(number_of_sides, int) and number_of_sides > 2:
-            self._n = number_of_sides
+        if isinstance(numberOfSides, int) and numberOfSides > 2:
+            self._n = numberOfSides
         else:
-            print("No changes were made: Number of sides must be an integer greater than 2")
+            raise ValueError("Number of sides wasn't changed: Number of sides must be an integer greater than 2")
 
-    def get_side(self):
+    def getSide(self):
         return self._side
 
-    def set_side(self, length_of_side):
-        if isinstance(length_of_side, int):
-            length_of_side = float(length_of_side)
+    def setSide(self, lengthOfSide):
+        if isinstance(lengthOfSide, int):
+            lengthOfSide = float(lengthOfSide)
 
-        if isinstance(length_of_side, float) and length_of_side > 0:
-            self._side = length_of_side
+        if isinstance(lengthOfSide, float) and lengthOfSide > 0:
+            self._side = lengthOfSide
         else:
-            print("No chnages were made: Length of side must greater than 0")
+            raise ValueError("Length of sides wasn't changed: Length of sides must be a number greater than 0")
 
-    
-    
-    
+    def getX(self):
+        return self._x
 
+    def setX(self, xCoord):
+        if isinstance(xCoord, int):
+            xCoord = float(xCoord)
         
+        if isinstance(xCoord, float):
+            self._x = xCoord
+
+        else:
+            raise ValueError("X-coordinate wasn't changed: x coordinate must be a number")
 
 
-
+    def getPerimeter():
+        """ TODO """
         
-
-
 
 
 shape1 = RegularPolygon()
-# shape1.set_n(4.6)
-shape1.set_side("a")
-print(shape1.get_side())
+shape1.set_x()
+print(shape1.get_x())
+print(shape1)
 
