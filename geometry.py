@@ -11,7 +11,6 @@ class RegularPolygon():
     def __str__(self):
         return f"Number of Sides: {self._n}, Length of a side: {self._side}, Center x coordinate: {self._x}, Center y coordinate: {self._y}"
 
-
     def getN(self):
         return self._n
 
@@ -58,11 +57,47 @@ class RegularPolygon():
         return area
 
 
-# shape1 = RegularPolygon()
-# shape1.setX(3)
-# shape1.setSide(5.25)
-# shape1.setN(4)
-# print(shape1)
-# print(f"Area: {shape1.getArea():,.2f}       Perimeter: {shape1.getPerimeter()}")
+
+
+
+
+# TEST
+def main():
+    polygon1 = RegularPolygon()
+    print(f"Perimeter of polygon1 is {polygon1.getPerimeter():,.2f} units")
+    print(f"Area of polygon1 is {polygon1.getArea():,.2f} square units\n")
+
+
+    polygon2 = RegularPolygon(6, 4)
+    print(f"Perimeter of polygon2 is {polygon2.getPerimeter():,.2f} units")
+    print(f"Area of polygon2 is {polygon2.getArea():,.2f} square units\n")
+
+
+    polygon3 = RegularPolygon(10, 4, 5.6, 7.8)
+    print(f"Perimeter of polygon3 is {polygon3.getPerimeter():,.2f} units")
+    print(f"Area of polygon3 is {polygon3.getArea():,.2f} square units")
+
+
+    # # UNCOMMENT TO PRINT ALL POLYGONS AUTOMATICALLY
+    # polygons = (polygon1, polygon2, polygon3)
+
+    # for count, polygon in enumerate(polygons, start=1):
+    #     print(f"\npolygon{count}")
+
+    #     # Uncomment to print out all the attributes of each polygon
+    #     # print(polygon)
+
+    #     # Prints out the perimeter and area of each polyon
+    #     print(f"Perimeter of polygon{count} is {polygon.getPerimeter():,.2f} units")
+    #     print(f"Area of polygon{count} is {polygon.getArea():,.2f} square units")
+
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 
 
