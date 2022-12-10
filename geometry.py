@@ -1,3 +1,5 @@
+from math import tan, pi
+
 class RegularPolygon():
     """ TODO """
     def __init__(self, numberOfSides=3, lengthOfSide=1.0, xCoord=0.0, yCoord=0.0):
@@ -46,13 +48,21 @@ class RegularPolygon():
             raise ValueError("X-coordinate wasn't changed: x coordinate must be a number")
 
 
-    def getPerimeter():
-        """ TODO """
-        
+    def getPerimeter(self):
+        """ Return the permineter of the polygon """
+        return self._n * self._side
+
+    def getArea(self):
+        """ Returns the area of the polygon """
+        area = ((self._n * self._side**2) / (4 * tan(pi / self._n)))
+        return area
 
 
-shape1 = RegularPolygon()
-shape1.set_x()
-print(shape1.get_x())
-print(shape1)
+# shape1 = RegularPolygon()
+# shape1.setX(3)
+# shape1.setSide(5.25)
+# shape1.setN(4)
+# print(shape1)
+# print(f"Area: {shape1.getArea():,.2f}       Perimeter: {shape1.getPerimeter()}")
+
 
