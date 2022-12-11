@@ -1,6 +1,6 @@
 from math import tan, pi
 
-class RegularPolygon():
+class RegularPolygon:
     """ An equilateral and equiangular polygon """
     def __init__(self, numberOfSides=3, lengthOfSide=1.0, xCoord=0.0, yCoord=0.0):
         """ Initialize all instance variables as private with default values """
